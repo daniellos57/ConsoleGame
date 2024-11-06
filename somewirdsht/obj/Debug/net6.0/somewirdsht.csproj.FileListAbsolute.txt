@@ -1,0 +1,14 @@
+C:\Users\drapiewski.d\source\repos\somewirdsht\somewirdsht\bin\Debug\net6.0\somewirdsht.exe
+C:\Users\drapiewski.d\source\repos\somewirdsht\somewirdsht\bin\Debug\net6.0\somewirdsht.deps.json
+C:\Users\drapiewski.d\source\repos\somewirdsht\somewirdsht\bin\Debug\net6.0\somewirdsht.runtimeconfig.json
+C:\Users\drapiewski.d\source\repos\somewirdsht\somewirdsht\bin\Debug\net6.0\somewirdsht.dll
+C:\Users\drapiewski.d\source\repos\somewirdsht\somewirdsht\bin\Debug\net6.0\somewirdsht.pdb
+C:\Users\drapiewski.d\source\repos\somewirdsht\somewirdsht\obj\Debug\net6.0\somewirdsht.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\drapiewski.d\source\repos\somewirdsht\somewirdsht\obj\Debug\net6.0\somewirdsht.AssemblyInfoInputs.cache
+C:\Users\drapiewski.d\source\repos\somewirdsht\somewirdsht\obj\Debug\net6.0\somewirdsht.AssemblyInfo.cs
+C:\Users\drapiewski.d\source\repos\somewirdsht\somewirdsht\obj\Debug\net6.0\somewirdsht.csproj.CoreCompileInputs.cache
+C:\Users\drapiewski.d\source\repos\somewirdsht\somewirdsht\obj\Debug\net6.0\somewirdsht.dll
+C:\Users\drapiewski.d\source\repos\somewirdsht\somewirdsht\obj\Debug\net6.0\refint\somewirdsht.dll
+C:\Users\drapiewski.d\source\repos\somewirdsht\somewirdsht\obj\Debug\net6.0\somewirdsht.pdb
+C:\Users\drapiewski.d\source\repos\somewirdsht\somewirdsht\obj\Debug\net6.0\somewirdsht.genruntimeconfig.cache
+C:\Users\drapiewski.d\source\repos\somewirdsht\somewirdsht\obj\Debug\net6.0\ref\somewirdsht.dll
