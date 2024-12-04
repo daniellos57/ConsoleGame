@@ -20,7 +20,7 @@ class MainGame
     {
         Hero hero = new Hero();
         Console.WriteLine("Welcome to Hero Draw!");
-        Console.WriteLine("Choose what u wanna do!\n N - new game\n L- Load game");
+        Console.WriteLine("Choose what u wanna do!\n N - new game\n L- Load game\n P - Pong game!");
       AGAIN:  string input = Console.ReadLine();
         switch (input)
         {
@@ -32,11 +32,141 @@ class MainGame
                 Hero loadedHero = HeroManager.LoadHero();
                 Start(loadedHero);
                 break;
+            case "p":
+                StratPong();
+                break;
             default:
                 goto AGAIN;
         }
+
+
+
     }
 
+
+public static void StratPong()
+    {
+        string[,] plansza = new string[10, 15];
+        for (int i = 0; i < 10; i++)
+        {
+            for (int j = 0; j < 15; j++)
+            {
+                plansza[i, j] = " ";
+            }
+
+        }
+        Boolean pong = false;
+
+        for (int i = 0; i < 2; i++)
+        {
+            for (int j = 0; j < 15; j++)
+            {
+                plansza[i, j] = "X";
+            }
+
+        }
+
+        int x = 5;
+        int y = 5;
+        int down = 1;
+        int left = 0;
+        int arrow_right = 8;
+        int arrow_left = 7;
+        do
+        {
+            if (Console.KeyAvailable)
+            {
+                ConsoleKeyInfo keyInfo = Console.ReadKey(intercept: true);
+
+                if (keyInfo.Key == ConsoleKey.RightArrow)
+                {
+                    if (arrow_right < 14)
+                    {
+                        plansza[9, arrow_left] = " ";
+                        plansza[9, arrow_right] = " ";
+                        arrow_right++;
+                        arrow_left++;
+                    }
+                }
+                else if (keyInfo.Key == ConsoleKey.LeftArrow)
+                {
+                    if (arrow_left > 0)
+                    {
+                        plansza[9, arrow_left] = " ";
+                        plansza[9, arrow_right] = " ";
+                        arrow_right--;
+                        arrow_left--;
+                    }
+                }
+            }
+            plansza[9, arrow_left] = "-";
+            plansza[9, arrow_right] = "-";
+            plansza[x, y] = " ";
+
+            if (down == 0)
+            {
+                if (x < 9) x++; else { x--; down = 1; }
+            }
+            else
+            {
+                if (x > 0) x--; else { x++; down = 0; }
+            }
+
+
+            if (left == 0)
+            {
+                if (y < 14) y++; else { y--; left = 1; }
+            }
+            else
+            {
+                if (y > 0) y--; else { y++; left = 0; }
+
+
+                if (x == 8 && y == arrow_left) { down = 1; left = 0; x = 8; }
+                if (x == 8 && y == arrow_right) { down = 1; left = 1; x = 8; }
+                if (x == 9 && y != arrow_left && y != arrow_right) break;
+            }
+
+            if (x == 0 && plansza[0, y] == "X")
+            {
+                plansza[0, y] = " ";
+                if (down == 1) down = 0;
+                else down = 1;
+            }
+
+            if (x == 1 && plansza[1, y] == "X")
+            {
+                plansza[1, y] = " ";
+                if (down == 1) down = 0;
+                else down = 1;
+            }
+
+            plansza[x, y] = "*";
+            Console.Clear();
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 15; j++)
+                {
+                    Console.Write(plansza[i, j] + " ");
+                }
+                Console.WriteLine("\n");
+            }
+            Thread.Sleep(300);
+        } while (true);
+
+        plansza[x, y] = "*";
+
+        for (int i = 0; i < 10; i++)
+        {
+            for (int j = 0; j < 15; j++)
+            {
+                Console.Write(plansza[i, j] + " ");
+            }
+            Console.WriteLine("\n");
+        }
+
+        Console.WriteLine("U lose!");
+    }
 public static void Start(Hero hero)
     {
         Console.WriteLine("Hello " + hero.Name + "! Let's go and find your friends!");
